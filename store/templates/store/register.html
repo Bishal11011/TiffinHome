@@ -1,0 +1,67 @@
+
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<section id="contact" class="contact-us section-padding">
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <div class="d-flex justify-content-center">
+                <h3 id="form-title">REGISTER ACCOUNT</h3>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+    {% load widget_tweaks %}
+
+
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{form.username.label}}
+                    <div class="row">
+                    <div class="form-group col-md-12">
+                    {% render_field form.username class="form-control" %}
+            
+            </div>
+                    <br>
+                    {{form.email.label}}
+                    <div class="form-group col-md-12">
+                    {% render_field form.email class="form-control" %}
+            
+            </div>
+                    <br>
+                    {{form.password1.label}}
+                    <div class="form-group col-md-12">
+                    {% render_field form.password1 class="form-control" %}
+            
+            </div>
+                    <br>
+                    {{form.password2.label}}
+                    <div class="form-group col-md-12">
+                    {% render_field form.password2 class="form-control" %}
+            
+            </div>
+
+
+
+                       <div class="col-md-12 text-left">
+                         <input class="btn-home-border bg-primary" type="submit" value="Register Account">
+                       </div>
+                    </div>
+                </form>
+            </div>
+
+            {{form.errors}}
+            
+            <div class="mt-4">
+                <div class="d-flex justify-content-center links">
+                    Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+{% endblock content %}
+
+

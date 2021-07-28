@@ -1,0 +1,33 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		{% for product in products %}
+		<div class="containers">
+			<article class="cards">
+			  <div class="card__img-container">
+				<img src="{{product.imageURL}}" alt="User" class="card__img">
+				<div class="card__img-underlay"></div>
+			  </div>
+		  
+			  <div class="card__content">
+				<span class="card__icon fab fa-linkedin"></span>
+				<h3 class="card__title">{{product.name}}</h3>
+				<p class="card__desc">{{product.description}}</p>
+		  
+				<div class="card__flex">
+					<span class="card__author">{{product.owner}}</span>
+				  <span class="card__author">${{product.price}}</span>
+				  <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				</div>
+			  </div>
+			</article>
+		  </div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}
+
+
+
+

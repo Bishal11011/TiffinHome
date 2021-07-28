@@ -1,0 +1,35 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<section id="home" class="welcome-area">
+    <div class="welcome-slider-area">
+      <div id="welcome-slide-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="single-slide-item" style ="background-image:url( 'images/homenanner1.jpeg') ;">
+              <div class="single-slide-item-table">
+                <div class="single-slide-item-tablecell">
+                  <div class="container">
+                    <div class="row align-items-center">
+                      <div class="col-lg-12">
+                        <span>Welcome To</span>
+                        <h2>Tiffin Home </h2>
+                        <p class="lead">Welcome to Tiffin Home . We provide authentic Home  made food tp your doorsteps </p> 
+                        <div>                     
+                        <a class="btn-home-border bg-info" href ="{% url 'store' %}"><i class="ti-plus" ></i> Start Shopping</a>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>				
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+
